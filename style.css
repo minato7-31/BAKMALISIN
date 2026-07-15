@@ -6,50 +6,138 @@
 
 body {
     height: 100vh;
-    background: #050b2e;
+    background: #020617;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
-.container {
+
+.ekran {
     text-align: center;
+    cursor: pointer;
 }
+
+
+.yazi-alan {
+    position: relative;
+}
+
 
 h1 {
     color: white;
     font-size: 45px;
-    margin-bottom: 50px;
-    animation: yazı 2s ease-in-out infinite alternate;
+    animation: yaziparla 2s infinite alternate;
 }
 
+
+/* Uçan kalpler */
+
+.ucan {
+    position: absolute;
+    font-size: 25px;
+    animation: ucus 3s infinite ease-in-out;
+}
+
+
+.kalp1 {
+    left: -60px;
+    top: 10px;
+    animation-delay: 0s;
+}
+
+
+.kalp2 {
+    right: -60px;
+    top: 20px;
+    animation-delay: 1s;
+}
+
+
+.kalp3 {
+    left: -30px;
+    top: -50px;
+    animation-delay: 1.5s;
+}
+
+
+.kalp4 {
+    right: -30px;
+    top: -40px;
+    animation-delay: 2s;
+}
+
+
+@keyframes ucus {
+
+    0% {
+        transform: translateY(20px) scale(0.7);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(-20px) scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-70px) scale(0.7);
+        opacity: 0;
+    }
+
+}
+
+
+@keyframes yaziparla {
+
+    from {
+        opacity: 0.6;
+        text-shadow: 0 0 10px #ffffff;
+    }
+
+    to {
+        opacity: 1;
+        text-shadow: 0 0 30px #4f8cff;
+    }
+
+}
+
+
+/* Lacivert nefes alan kalp */
+
 .kalp {
+    display: none;
     width: 150px;
     height: 150px;
-    background: #001f5f;
+    background: #001f5b;
     position: relative;
-    transform: rotate(-45deg);
     margin: auto;
+    transform: rotate(-45deg);
     animation: nefes 1.5s infinite ease-in-out;
-    box-shadow: 0 0 40px #003cff;
+    box-shadow: 0 0 50px #004cff;
 }
+
 
 .kalp::before,
 .kalp::after {
+
     content: "";
     position: absolute;
     width: 150px;
     height: 150px;
-    background: #001f5f;
+    background: #001f5b;
     border-radius: 50%;
+
 }
+
 
 .kalp::before {
     top: -75px;
     left: 0;
 }
+
 
 .kalp::after {
     left: 75px;
@@ -61,32 +149,19 @@ h1 {
 
     0% {
         transform: rotate(-45deg) scale(1);
-        box-shadow: 0 0 30px #003cff;
+        box-shadow: 0 0 30px #004cff;
     }
+
 
     50% {
         transform: rotate(-45deg) scale(1.15);
-        box-shadow: 0 0 70px #0055ff;
+        box-shadow: 0 0 80px #0066ff;
     }
+
 
     100% {
         transform: rotate(-45deg) scale(1);
-        box-shadow: 0 0 30px #003cff;
-    }
-
-}
-
-
-@keyframes yazı {
-
-    from {
-        opacity: 0.6;
-        transform: translateY(0);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(-10px);
+        box-shadow: 0 0 30px #004cff;
     }
 
 }

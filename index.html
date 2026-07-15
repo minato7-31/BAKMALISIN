@@ -1,31 +1,131 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İyi ki Varsın</title>
-    <link rel="stylesheet" href="style.css">
+<style>
+
+body {
+    margin:0;
+    height:100vh;
+    background:#020617;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial;
+    overflow:hidden;
+}
+
+#ekran {
+    text-align:center;
+    cursor:pointer;
+}
+
+h1 {
+    color:white;
+    font-size:45px;
+}
+
+
+.kalp {
+    display:none;
+    width:150px;
+    height:150px;
+    background:#001f5b;
+    position:relative;
+    transform:rotate(-45deg);
+    animation:nefes 1.5s infinite;
+    box-shadow:0 0 50px #0066ff;
+}
+
+
+.kalp:before,
+.kalp:after {
+
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    background:#001f5b;
+    border-radius:50%;
+
+}
+
+.kalp:before {
+    top:-75px;
+}
+
+.kalp:after {
+    left:75px;
+}
+
+
+@keyframes nefes {
+
+    50% {
+        transform:rotate(-45deg) scale(1.15);
+    }
+
+}
+
+
+.ucan {
+    position:absolute;
+    font-size:25px;
+    animation:uc 3s infinite;
+}
+
+
+@keyframes uc {
+
+    0% {
+        transform:translateY(20px);
+        opacity:0;
+    }
+
+    50% {
+        opacity:1;
+    }
+
+    100% {
+        transform:translateY(-80px);
+        opacity:0;
+    }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-<div class="ekran" id="ekran">
 
-    <div class="yazi-alan" id="yaziAlan">
-        <h1>İyi ki varsın ❤️</h1>
+<div id="ekran" onclick="goster()">
 
-        <span class="ucan">❤️</span>
-        <span class="ucan">💙</span>
-        <span class="ucan">❤️</span>
-        <span class="ucan">💙</span>
-    </div>
+<h1 id="yazi">İyi ki varsın ❤️</h1>
 
-    <div class="kalp" id="kalp"></div>
+<span class="ucan" style="left:-50px">❤️</span>
+<span class="ucan" style="right:-50px">💙</span>
+
+
+<div id="kalp" class="kalp"></div>
+
 
 </div>
 
 
-<script src="script.js"></script>
+
+<script>
+
+function goster(){
+
+document.getElementById("yazi").style.display="none";
+
+document.getElementById("kalp").style.display="block";
+
+}
+
+</script>
+
 
 </body>
 </html>

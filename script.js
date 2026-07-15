@@ -1,23 +1,15 @@
 function kalbiAc(){
 
+
     const giris = document.getElementById("giris");
-    const kalp = document.getElementById("kalp");
+
+    const kalpAlani = document.getElementById("kalpAlani");
 
 
-    giris.style.animation = "gelis 1s reverse";
+    giris.style.display="none";
 
 
-    setTimeout(()=>{
-
-
-        giris.style.display="none";
-
-
-        kalp.style.display="block";
-
-
-    },700);
-
+    kalpAlani.style.display="block";
 
 
 }

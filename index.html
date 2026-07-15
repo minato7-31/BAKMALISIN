@@ -9,37 +9,48 @@
 </head>
 <body>
 
-    <!-- Açılış Ekranı -->
-    <div id="intro">
-        <h1>💙 İyi ki Varsın 💙</h1>
-        <p>Devam etmek için ekrana tıkla</p>
-    </div>
+    <!-- Açılış -->
+    <section id="intro">
+        <div class="intro-box">
+            <h1>💙 İyi ki Varsın 💙</h1>
+            <p>Devam etmek için herhangi bir yere tıkla</p>
+        </div>
+    </section>
 
-    <!-- Kalp Animasyonu -->
-    <div id="scene" class="hidden">
+    <!-- Kalp Sahnesi -->
+    <section id="scene" class="hidden">
 
-        <div class="heart-container">
+        <!-- Neon Kalpler -->
+        <div class="heart-wrapper">
 
-            <div class="heart h1"></div>
-            <div class="heart h2"></div>
-            <div class="heart h3"></div>
-            <div class="heart h4"></div>
-            <div class="heart h5"></div>
-            <div class="heart h6"></div>
-            <div class="heart h7"></div>
-            <div class="heart h8"></div>
+            <svg class="heart-svg" viewBox="0 0 512 512">
+
+                <path class="heart heart1"
+                    d="M256 472s-184-112-184-264c0-72 56-128 128-128 48 0 88 24 112 64 24-40 64-64 112-64 72 0 128 56 128 128 0 152-184 264-184 264z"/>
+
+                <path class="heart heart2"
+                    d="M256 472s-184-112-184-264c0-72 56-128 128-128 48 0 88 24 112 64 24-40 64-64 112-64 72 0 128 56 128 128 0 152-184 264-184 264z"/>
+
+                <path class="heart heart3"
+                    d="M256 472s-184-112-184-264c0-72 56-128 128-128 48 0 88 24 112 64 24-40 64-64 112-64 72 0 128 56 128 128 0 152-184 264-184 264z"/>
+
+                <path class="heart heart4"
+                    d="M256 472s-184-112-184-264c0-72 56-128 128-128 48 0 88 24 112 64 24-40 64-64 112-64 72 0 128 56 128 128 0 152-184 264-184 264z"/>
+
+                <path class="heart heart5"
+                    d="M256 472s-184-112-184-264c0-72 56-128 128-128 48 0 88 24 112 64 24-40 64-64 112-64 72 0 128 56 128 128 0 152-184 264-184 264z"/>
+
+            </svg>
 
         </div>
 
         <div class="message">
-            <h2>💙 Seni Çok Seviyorum 💙</h2>
-            <p>Her zaman yanındayım.</p>
+            <h2>💙 Her Zaman Yanındayım 💙</h2>
         </div>
 
-    </div>
+        <div id="particles"></div>
 
-    <!-- Küçük Kalpler -->
-    <div id="particles"></div>
+    </section>
 
     <script src="script.js"></script>
 

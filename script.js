@@ -1,50 +1,39 @@
 const intro = document.getElementById("intro");
-const heartScreen = document.getElementById("heartScreen");
+const scene = document.getElementById("scene");
+const particles = document.getElementById("particles");
 
-// İlk ekrana tıklanınca geçiş
+// Açılış ekranına tıklayınca
 intro.addEventListener("click", () => {
-    intro.style.opacity = "0";
+    intro.classList.add("fade");
 
     setTimeout(() => {
         intro.style.display = "none";
-        heartScreen.classList.remove("hidden");
+        scene.classList.remove("hidden");
 
-        // Kalpleri oluşturmaya başla
-        setInterval(createHeart, 200);
-    }, 700);
+        createParticles();
+    }, 800);
 });
 
-// Uçuşan küçük kalpler
-function createHeart() {
-    const heart = document.createElement("div");
+// Küçük uçan kalpler
+function createParticles() {
 
-    heart.className = "floating-heart";
-    heart.innerHTML = "❤️";
+    setInterval(() => {
 
-    heart.style.left = Math.random() * window.innerWidth + "px";
-    heart.style.top = window.innerHeight + "px";
+        const heart = document.createElement("div");
 
-    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+        heart.className = "particle";
+        heart.innerHTML = "💙";
 
-    document.body.appendChild(heart);
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.fontSize = (10 + Math.random() * 18) + "px";
+        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
 
-    const randomX = (Math.random() - 0.5) * 200;
+        particles.appendChild(heart);
 
-    heart.animate([
-        {
-            transform: "translate(0,0)",
-            opacity: 1
-        },
-        {
-            transform: `translate(${randomX}px,-${window.innerHeight + 200}px)`,
-            opacity: 0
-        }
-    ], {
-        duration: 5000,
-        easing: "linear"
-    });
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
 
-    setTimeout(() => {
-        heart.remove();
-    }, 5000);
+    }, 180);
+
 }
